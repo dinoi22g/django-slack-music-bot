@@ -13,6 +13,12 @@ from utils.youtube_music_api import YoutubeMusicAPI
 
 @api_view(['POST'])
 def favorite_list_command(request):
+    """
+    最愛清單指令 (刪除功能未開發)
+
+    :param request:
+    :return:
+    """
     data = request.POST
 
     user_id = data['user_id']
@@ -27,5 +33,4 @@ def favorite_list_command(request):
         'blocks': favorite_list_block(docs)
     }
 
-    print(json.dumps(response))
     return JsonResponse(response, status=status.HTTP_200_OK)
